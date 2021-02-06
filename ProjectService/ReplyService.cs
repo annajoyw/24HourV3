@@ -8,5 +8,8 @@ namespace ProjectService
 {
     class ReplyService
     {
+        //get comment replies
+
+        //post reply to comment
     }
 }

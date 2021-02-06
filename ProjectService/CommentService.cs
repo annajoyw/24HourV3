@@ -8,5 +8,8 @@ namespace ProjectService
 {
     public class CommentService
     {
+        //get post comments
+
+        //post comment
     }
 }

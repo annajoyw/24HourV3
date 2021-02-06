@@ -9,5 +9,7 @@ namespace ProjectData
 {
     public class User
     {
+        [Key]
+        public Guid UserId { get; set; }
     }
 }

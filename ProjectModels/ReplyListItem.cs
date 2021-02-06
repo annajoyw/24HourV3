@@ -8,5 +8,9 @@ namespace ProjectModels
 {
     public class ReplyListItem
     {
+        public int ReplyId { get; set; }
+        
+        public string Content { get; set; }
+
     }
 }

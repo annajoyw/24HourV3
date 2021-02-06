@@ -8,5 +8,10 @@ namespace ProjectModels
 {
     public class PostListItem
     {
+        public int PostId { get; set; }
+        public string Title { get; set; }
+
+       
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

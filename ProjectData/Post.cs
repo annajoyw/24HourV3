@@ -20,10 +20,10 @@ namespace ProjectData
         public virtual List<Comment> ListOfComments { get; set; }
 
         [ForeignKey(nameof(User))]
-        public Guid UserId { get; set; }
+        public Guid? UserId { get; set; }
         public virtual User User { get; set; }
 
-        [Required]
+        
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }

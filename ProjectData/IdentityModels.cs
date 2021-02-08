@@ -40,9 +40,13 @@ namespace ProjectData
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+
             modelBuilder
             .Conventions
             .Remove<PluralizingTableNameConvention>();
+        
 
             modelBuilder
                 .Configurations

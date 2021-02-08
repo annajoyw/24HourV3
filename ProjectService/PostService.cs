@@ -18,8 +18,6 @@ namespace ProjectService
             _userId = userId;
         }
 
-
-
         public bool CreatePost(CreatePost model)
         {
             var entity = new Post()
@@ -36,7 +34,6 @@ namespace ProjectService
                 return ctx.SaveChanges() == 1;
             }
         }
-
 
         //Get Post
 

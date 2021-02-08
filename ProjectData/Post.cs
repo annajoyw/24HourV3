@@ -23,10 +23,6 @@ namespace ProjectData
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
 
-        [ForeignKey(nameof(Reply))]
-        public int ReplyId { get; set; }
-        public virtual Reply Reply { get; set; }
-
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 

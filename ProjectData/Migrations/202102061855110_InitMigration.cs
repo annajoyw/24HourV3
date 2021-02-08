@@ -37,7 +37,7 @@ namespace ProjectData.Migrations
                     })
                 .PrimaryKey(t => t.PostId)
                 .ForeignKey("dbo.Reply", t => t.ReplyId, cascadeDelete: true)
-                .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId)
                 .Index(t => t.ReplyId);
             
@@ -50,7 +50,7 @@ namespace ProjectData.Migrations
                         UserId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.ReplyId)
-                .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.User", t => t.UserId, cascadeDelete: false)
                 .Index(t => t.UserId);
             
             CreateTable(

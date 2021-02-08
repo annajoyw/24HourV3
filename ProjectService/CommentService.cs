@@ -25,8 +25,14 @@ namespace ProjectService
                 new Comment()
                 {
                     CommentId = _commentId,
-                    Text = model.
-                }
+                    Text = model.Text
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Comment.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }

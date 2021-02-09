@@ -24,7 +24,7 @@ namespace _24HourWebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> PostRestaurant([FromBody] Comment model)
+        public async Task<IHttpActionResult> PostPost([FromBody] Comment model)
         {
             if (model is null)
             {

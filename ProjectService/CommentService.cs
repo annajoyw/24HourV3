@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjectData;
+using ProjectModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,29 @@ namespace ProjectService
 {
     public class CommentService
     {
+        private readonly int _commentId;
+
+        public CommentService(int commentId)
+        {
+            _commentId = commentId;
+        }
+        //get post comments
+
+        //post comment
+        public bool CreateComment(CreateComment model)
+        {
+            var entity =
+                new Comment()
+                {
+                    CommentId = _commentId,
+                    Text = model.Text
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Comment.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

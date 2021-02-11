@@ -33,16 +33,20 @@ namespace ProjectData
             return new ApplicationDbContext();
         }
 
-        public DbSet<Post> Post { get; set; }
+        public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comment { get; set; }
         public DbSet<Reply> Reply { get; set; }
         public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+
             modelBuilder
             .Conventions
             .Remove<PluralizingTableNameConvention>();
+        
 
             modelBuilder
                 .Configurations

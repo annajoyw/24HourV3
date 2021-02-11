@@ -17,7 +17,7 @@ namespace ProjectData
         [Required]
         public string Text { get; set; }
 
-        public virtual List<Comment> ListOfComments { get; set; }
+        public virtual List<Comment> ListOfComments { get; set; } = new List<Comment>();
 
         [ForeignKey(nameof(User))]
         public Guid? UserId { get; set; }

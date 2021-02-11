@@ -16,6 +16,8 @@ namespace ProjectData
         [Required]
         public string Text { get; set; }
 
+        public virtual List<Reply> Replies { get; set; } = new List<Reply>();
+
         [ForeignKey(nameof(User))]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
